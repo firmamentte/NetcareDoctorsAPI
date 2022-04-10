@@ -41,10 +41,10 @@ namespace NetcareDoctorsAPI.Controllers
                 }
                 else
                 {
-                    //if (!FirmamentUtilities.Utilities.ValidationHelper.IsSaIdValid(createDoctorProfileReq.IdNo))
-                    //{
-                    //    ModelState.AddModelError("IdNoInvalid", "Invalid ID No");
-                    //}
+                    if (!FirmamentUtilities.Utilities.ValidationHelper.IsSaIdValid(createDoctorProfileReq.IdNo))
+                    {
+                        ModelState.AddModelError("IdNoInvalid", "Invalid ID No");
+                    }
                 }
 
                 if (string.IsNullOrWhiteSpace(createDoctorProfileReq.HpcsaNo))
@@ -115,10 +115,10 @@ namespace NetcareDoctorsAPI.Controllers
                 }
                 else
                 {
-                    //if (FirmamentUtilities.Utilities.ValidationHelper.IsSaIdValid(editDoctorProfileReq.IdNo))
-                    //{
-                    //    ModelState.AddModelError("IdNoInvalid", "Invalid ID No");
-                    //}
+                    if (FirmamentUtilities.Utilities.ValidationHelper.IsSaIdValid(editDoctorProfileReq.IdNo))
+                    {
+                        ModelState.AddModelError("IdNoInvalid", "Invalid ID No");
+                    }
                 }
 
                 if (string.IsNullOrWhiteSpace(editDoctorProfileReq.HpcsaNo))
