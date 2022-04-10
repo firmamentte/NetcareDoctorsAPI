@@ -37,19 +37,19 @@ namespace NetcareDoctorsAPI.Controllers
             {
                 if (string.IsNullOrWhiteSpace(createDoctorProfileReq.IdNo))
                 {
-                    ModelState.AddModelError("IdNo", "ID No required");
+                    ModelState.AddModelError("IdNo", "ID No. required");
                 }
                 else
                 {
                     if (!FirmamentUtilities.Utilities.ValidationHelper.IsSaIdValid(createDoctorProfileReq.IdNo))
                     {
-                        ModelState.AddModelError("IdNoInvalid", "Invalid ID No");
+                        ModelState.AddModelError("IdNoInvalid", "Invalid ID No.");
                     }
                 }
 
                 if (string.IsNullOrWhiteSpace(createDoctorProfileReq.HpcsaNo))
                 {
-                    ModelState.AddModelError("Hpcsano", "Hpcsa No required");
+                    ModelState.AddModelError("Hpcsano", "Hpcsa No. required");
                 }
 
                 if (string.IsNullOrWhiteSpace(createDoctorProfileReq.TitleName))
@@ -111,19 +111,19 @@ namespace NetcareDoctorsAPI.Controllers
 
                 if (string.IsNullOrWhiteSpace(editDoctorProfileReq.IdNo))
                 {
-                    ModelState.AddModelError("IdNo", "ID No required");
+                    ModelState.AddModelError("IdNo", "ID No. required");
                 }
                 else
                 {
-                    if (FirmamentUtilities.Utilities.ValidationHelper.IsSaIdValid(editDoctorProfileReq.IdNo))
+                    if (!FirmamentUtilities.Utilities.ValidationHelper.IsSaIdValid(editDoctorProfileReq.IdNo))
                     {
-                        ModelState.AddModelError("IdNoInvalid", "Invalid ID No");
+                        ModelState.AddModelError("IdNoInvalid", "Invalid ID No.");
                     }
                 }
 
                 if (string.IsNullOrWhiteSpace(editDoctorProfileReq.HpcsaNo))
                 {
-                    ModelState.AddModelError("Hpcsano", "Hpcsa No required");
+                    ModelState.AddModelError("Hpcsano", "Hpcsa No. required");
                 }
 
                 if (string.IsNullOrWhiteSpace(editDoctorProfileReq.TitleName))
