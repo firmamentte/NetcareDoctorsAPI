@@ -159,7 +159,7 @@ namespace NetcareDoctorsAPI.Controllers
 
             #endregion
 
-            return Created(string.Empty, await DoctorProfileBLL.EditDoctorProfile(SharedHelper.GetHeaderUsername(Request), editDoctorProfileReq));
+            return Ok(await DoctorProfileBLL.EditDoctorProfile(SharedHelper.GetHeaderUsername(Request), editDoctorProfileReq));
         }
 
         [Route("V1/DeleteDoctorProfile")]
