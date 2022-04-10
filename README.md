@@ -1,4 +1,4 @@
-#NetcareDoctorsAPI </br></br>
+#NetcareDoctorsAPI
 Technologies Used </br>
 >C# </br>
 >Visual Studio 2022 </br>
