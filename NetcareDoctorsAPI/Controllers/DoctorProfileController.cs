@@ -7,18 +7,21 @@ using NetcareDoctorsAPI.Filters;
 namespace NetcareDoctorsAPI.Controllers
 {
     [Route("api/DoctorProfile")]
-    [AuthenticateAccessToken]
+    //[AuthenticateAccessToken]
     [ApiController]
     public class DoctorProfileController : ControllerBase
     {
+        private readonly ILogger<DoctorProfileController> _logger;
         private readonly DoctorProfileBLL DoctorProfileBLL;
         private readonly SharedHelper SharedHelper;
-        public DoctorProfileController()
+        public DoctorProfileController(ILogger<DoctorProfileController> logger)
         {
+            _logger = logger;
             DoctorProfileBLL = new();
             SharedHelper = new();
         }
 
+        
         [Route("V1/CreateDoctorProfile")]
         [HttpPost]
         [AuthenticateAdministratorApplicationUser]

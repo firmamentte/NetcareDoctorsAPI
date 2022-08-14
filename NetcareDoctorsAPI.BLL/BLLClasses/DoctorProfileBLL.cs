@@ -1,4 +1,5 @@
-﻿using NetcareDoctorsAPI.BLL.DataContract;
+﻿using Microsoft.Extensions.Logging;
+using NetcareDoctorsAPI.BLL.DataContract;
 using NetcareDoctorsAPI.Data;
 using NetcareDoctorsAPI.Data.DALClasses;
 using NetcareDoctorsAPI.Data.Entities;

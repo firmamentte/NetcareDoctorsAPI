@@ -1,14 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
 namespace NetcareDoctorsAPI.Data.Entities
 {
     public partial class NetcareDoctorsContext : DbContext
     {
-        public NetcareDoctorsContext()
+
+        private readonly ILoggerFactory _loggerFactory;
+
+        public NetcareDoctorsContext() { }
+
+        public NetcareDoctorsContext(ILoggerFactory loggerFactory)
         {
+            _loggerFactory = loggerFactory;
         }
 
         public NetcareDoctorsContext(DbContextOptions<NetcareDoctorsContext> options)
@@ -29,6 +33,7 @@ namespace NetcareDoctorsAPI.Data.Entities
             {
                 optionsBuilder.UseSqlServer(StaticClass.DatabaseHelper.ConnectionString);
                 optionsBuilder.UseLazyLoadingProxies();
+                optionsBuilder.LogTo(Console.WriteLine);
             }
         }
 
