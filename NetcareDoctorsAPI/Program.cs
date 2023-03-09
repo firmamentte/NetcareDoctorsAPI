@@ -27,10 +27,10 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseCors(options => options.
-                       AllowAnyOrigin().
+                       //AllowAnyOrigin().
+                       WithOrigins(app.Configuration.GetSection("UseCors:AllowedOrigins").Get<string[]>()).
                        AllowAnyHeader().
-                       WithMethods(new string[] { "Get", "Post", "Put", "Delete" }));
-
+                       WithMethods(app.Configuration.GetSection("UseCors:AllowedHttpMethods").Get<string[]>()));
 
 app.UseHttpsRedirection();
 app.UseAuthorization();
