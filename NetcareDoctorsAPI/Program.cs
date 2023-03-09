@@ -28,9 +28,9 @@ if (app.Environment.IsDevelopment())
 
 app.UseCors(options => options.
                        //AllowAnyOrigin().
-                       WithOrigins(app.Configuration.GetSection("UseCors:AllowedOrigins").Get<string[]>()).
+                       WithOrigins(app.Configuration.GetSection("Cors:AllowedOrigins").Get<string[]>()).
                        AllowAnyHeader().
-                       WithMethods(app.Configuration.GetSection("UseCors:AllowedHttpMethods").Get<string[]>()));
+                       WithMethods(app.Configuration.GetSection("Cors:AllowedHttpMethods").Get<string[]>()));
 
 app.UseHttpsRedirection();
 app.UseAuthorization();
